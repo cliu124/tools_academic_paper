@@ -37,23 +37,6 @@ function frame=plot_line(data,plot_config)
 %%resolution
 
 %%No output, just print the figure at current file folder.
-
-%%Sample usage
-% % 
-% % for i=1:length(a)
-% % plot_config.Markerindex=3;   
-% % plot_config.user_color_style_marker_list={'k-','b--','rx'}; plot_config.resolution=300;
-% % data{1}=[time;state_uncon(i,:)]; data{2}=[time;state_con(i,:)];
-% % plot_config.label_list={1,'$t$',strcat('$a_',num2str(i),'(t)$')};
-% % plot_config.title_list={0};
-% % plot_config.legend_list={0,'No feedback','With feedback'};
-% % plot_config.xlim_list=[1,0,1000]; plot_config.ylim_list=[1,-1.5,1.5]; plot_config.xtick_list=[1,0,200,400,600,800,1000]; plot_config.ytick_list=[1,-1.5,-1,-0.5,0,0.5,1,1.5];
-% % plot_config.name=strcat('passive_NS_9D_Galerkin_mean1_9_state',num2str(i),'_20190210.png');
-% % plot_config.print_size=[1,1200,1100];
-% % plot_line(data,plot_config);
-% % end
-
-
 %%---------Set default input:
 field_all={'label_list','title_list','xlim_list','ylim_list','legend_list',...
   'xtick_list','ytick_list','name','Markerindex','user_color_style_marker_list'...
@@ -132,6 +115,12 @@ if plot_config.ylim_list(1)
 end
 if plot_config.xtick_list(1)
   set(gca,'xtick',plot_config.xtick_list(2:end));
+end
+if plot_config.xticklabels_list{1}
+    set(gca,'xticklabels',plot_config.xticklabels_list(2:end))
+end
+if plot_config.yticklabels_list{1}
+     set(gca,'yticklabels',plot_config.yticklabels_list(2:end))
 end
 if plot_config.ytick_list(1)
   set(gca,'ytick',plot_config.ytick_list(2:end));

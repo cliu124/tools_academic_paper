@@ -512,10 +512,10 @@ if plot_config.colormap_discrete==0
 
         colormap(mycmap);
       case 'redblue'
-        addpath('./post_processing');
+%         addpath('./post_processing');
         colormap(redblue);
       case 'bluewhitered' 
-        addpath('./post_processing');%%Note 2020/03/18, this colormap will enforce zero as white color, no matter 0 is the middle point or not
+%         addpath('./post_processing');%%Note 2020/03/18, this colormap will enforce zero as white color, no matter 0 is the middle point or not
         colormap(bluewhitered); shading interp;
       case 'gray'
         shading interp;  colormap(gray);
@@ -539,10 +539,10 @@ else%%This is setting the discrete colormap numbers.
 
         colormap(mycmap(plot_config.colormap_discrete));
       case 'redblue'
-        addpath('./post_processing');
+%         addpath('./post_processing');
         colormap(redblue(plot_config.colormap_discrete));
       case 'bluewhitered' 
-        addpath('./post_processing');%%Note 2020/03/18, this colormap will enforce zero as white color, no matter 0 is the middle point or not
+%         addpath('./post_processing');%%Note 2020/03/18, this colormap will enforce zero as white color, no matter 0 is the middle point or not
         colormap(bluewhitered(plot_config.colormap_discrete)); shading interp;
       case 'gray'
         shading interp;  colormap(gray(plot_config.colormap_discrete));
